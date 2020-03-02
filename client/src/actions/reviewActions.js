@@ -3,11 +3,14 @@ import { GET_REVIEWS, ADD_REVIEW, DELETE_REVIEW, REVIEWS_LOADING } from './types
 
 export const getReviews = () => dispatch => {
   dispatch(setReviewsLoading());
-  axios.get('/api/reviews').then(res =>
+  axios.get('/api/reviews').then(res => {
+
     dispatch({
       type: GET_REVIEWS,
       payload: res.data
-    })
+    });
+    console.log(res.data);
+  }
   )
 };
 

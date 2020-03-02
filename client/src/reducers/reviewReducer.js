@@ -1,16 +1,16 @@
 import { GET_REVIEWS, ADD_REVIEW, DELETE_REVIEW, REVIEWS_LOADING } from '../actions/types';
 
-const reviewInitial = {
+const initialState = {
   reviews: [],
   loading: false
 }
 
-export default function(state = reviewInitial, action){
+export default function(state = initialState, action){
   switch(action.type){
     case GET_REVIEWS:
     return {
       ...state,
-      items: action.payload,
+      reviews: action.payload,
       loading: false
     };
     case ADD_REVIEW:

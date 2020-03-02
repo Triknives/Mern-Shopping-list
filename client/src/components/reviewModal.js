@@ -23,7 +23,8 @@ class ReviewModal extends Component {
     });
   }
   onChange = (e) => {
-    this.setState({[e.target.post]: e.target.value});
+    this.setState({[e.target.name]: e.target.value});
+    console.log(e.target)
   }
   onSubmit = (e) => {
     e.preventDefault();

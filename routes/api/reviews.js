@@ -17,10 +17,12 @@ router.get('/',(req, res ) => {
 // @desc    Create A Review
 // @access  Public
 router.post('/', (req, res) => {
+  console.log(req.body)
   const newReview = new Review({
     post: req.body.post
   });
   newReview.save().then(review => res.json(review));
+    console.log("Review added")
 });
 
 // @route   Delete api/reviews/:id

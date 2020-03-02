@@ -17,10 +17,12 @@ router.get('/', (req, res) => {
 // @desc    Create An Item
 // @access  Public
 router.post('/', (req, res) => {
+  console.log(req.body)
   const newItem = new Item({
     name: req.body.name
   });
   newItem.save().then(item => res.json(item));
+  console.log("item added")
 });
 
 // @route   Delete api/items/:id
