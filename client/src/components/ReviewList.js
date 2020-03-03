@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
+import { Container , ListGroup, ListGroupItem, Media, Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getReviews, deleteReview } from '../actions/reviewActions';
@@ -13,33 +13,25 @@ class ReviewList extends Component {
     this.props.deleteReview(id);
   };
 
-render() {
+  render() {
 
-  const { reviews } = this.props.review;
-  return(
-    <Container>
-        <ListGroup>
-          <TransitionGroup className="review-list">
-          {reviews.map(({_id, post}) => (
-            <CSSTransition key= {_id} timeout={500}
-            classNames ="fade">
-              <ListGroupItem>
-              <Button
-                className="remove-btn"
-                color="danger"
-                size="sm"
-                onClick={this.onDeleteClick.bind(this, _id)}
-                >
-                &times;
-              </Button>
+    const { reviews } = this.props.review;
+    return(
+      <Media>
+      {reviews.map(({_id, post}) => (
+        <div>
+          <Button
+            className="remove-btn"
+            color="danger"
+            size="sm"
+            onClick={this.onDeleteClick.bind(this, _id)}
+            >
+            </Button>
             {post}
-            </ListGroupItem>
-          </CSSTransition>
-        ))}
-        </TransitionGroup>
-      </ListGroup>
-  </Container>
-  );
+        </div>
+      ))}
+      </Media>
+    );
   }
 }
 ReviewList.propTypes = {
