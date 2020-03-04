@@ -11,7 +11,7 @@ const favoritesList = {
   margin: '.25vh',
   width:'15vw',
   float:'left',
-  marginLeft:'28vw',
+  marginLeft:'27vw',
 }
 
 const listBody = {

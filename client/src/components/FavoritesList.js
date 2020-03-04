@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
-const toReadList = {
+const bookList = {
   display:'inline-block',
   float: 'left',
   border:'2px grey solid',
@@ -31,7 +31,7 @@ class FavoritesList extends Component {
     const { items } = this.props.item;
     return(
       <div>
-          <ListGroup style = {toReadList}>
+          <ListGroup style = {bookList}>
             <TransitionGroup className="shopping-list">
             {items.map(({_id, name}) => (
               <CSSTransition key= {_id} timeout={500} classNames="fade">

@@ -25,10 +25,12 @@ opacity: 0.01;
 transition: opacity 1000ms ease-in;
 }
 
+
+
 .list-button {
   display:inline-block;
   float:right;
-  margin-right:10vw;
+  margin-right:9vw;
 }
 
 .list-group{
