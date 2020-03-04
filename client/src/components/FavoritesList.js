@@ -5,21 +5,22 @@ import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
-const favoritesList = {
+const toReadList = {
   display:'inline-block',
   width:'39%',
+  float: 'right',
   border:'2px grey solid',
   margin: '.25vh',
-  marginLeft:'7.5vw'
-}
+  marginRight:'7.5vw',
+  }
 
-const listBody = {
-  backgroundColor: '#324087',
-  color: 'white',
-  fontWeight: '600',
-}
+  const listBody = {
+    backgroundColor: '#324087',
+    color: 'white',
+    fontWeight: '600',
+  }
 
-class ShoppingList extends Component {
+class FavoritesList extends Component {
   componentDidMount(){
     this.props.getItems();
   }
@@ -31,7 +32,7 @@ class ShoppingList extends Component {
     const { items } = this.props.item;
     return(
       <div>
-          <ListGroup style = {favoritesList}>
+          <ListGroup style = {toReadList}>
             <TransitionGroup className="shopping-list">
             {items.map(({_id, name}) => (
               <CSSTransition key= {_id} timeout={500} classNames="fade">
@@ -54,7 +55,7 @@ class ShoppingList extends Component {
       );
     }
   }
-ShoppingList.propTypes = {
+FavoritesList.propTypes = {
   getItems: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 }
@@ -63,4 +64,4 @@ const mapStateToProps = (state) => ({
   item: state.item
 });
 
-export default connect(mapStateToProps, { getItems, deleteItem })(ShoppingList);
+export default connect(mapStateToProps, { getItems, deleteItem })(FavoritesList);

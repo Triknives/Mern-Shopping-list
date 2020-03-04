@@ -12,6 +12,14 @@ import {
 import { connect } from 'react-redux';
 import { addReview } from '../actions/reviewActions';
 
+const reviewButton = {
+  textAlign:'center',
+  width: '100%',
+  float:'left'
+}
+
+
+
 class ReviewModal extends Component {
   state = {
     modal: false,
@@ -42,11 +50,13 @@ class ReviewModal extends Component {
 render(){
   return(
     <div>
+      <div style = {reviewButton}>
     <Button
       color="dark"
       style={{marginBottom: '2rem'}}
       onClick={this.toggle}
       >Add Review</Button>
+      </div>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}

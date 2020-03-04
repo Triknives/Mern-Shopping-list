@@ -1,3 +1,8 @@
+
+body {
+  background-color: #324087;
+}
+
 .remove-btn {
   margin-right: 0.5rem;
 }
@@ -18,4 +23,8 @@ opacity: 1;
 .fade-exit-active {
 opacity: 0.01;
 transition: opacity 1000ms ease-in;
+}
+
+.list-group{
+  margin:0;
 }

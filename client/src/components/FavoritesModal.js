@@ -15,10 +15,9 @@ import { addItem } from '../actions/itemActions';
 const itemButton = {
   textAlign:'center',
   width: '100%',
-  float:'left',
 }
 
-class ItemModal extends Component {
+class FavoritesModal extends Component {
   state = {
     modal: false,
     name: ''
@@ -84,4 +83,4 @@ class ItemModal extends Component {
 const mapStateToProps = state => ({
   item: state.item
 });
-export default connect(mapStateToProps, { addItem })(ItemModal);
+export default connect(mapStateToProps, { addItem })(FavoritesModal);
