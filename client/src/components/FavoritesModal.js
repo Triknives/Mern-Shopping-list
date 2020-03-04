@@ -12,11 +12,6 @@ import {
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 
-const itemButton = {
-  textAlign:'center',
-  width: '100%',
-}
-
 class FavoritesModal extends Component {
   state = {
     modal: false,
@@ -46,13 +41,11 @@ class FavoritesModal extends Component {
   render() {
     return(
       <div>
-        <div style = {itemButton}>
       <Button
+        className = "list-button"
         color="dark"
-        style={{marginBottom: '2rem'}}
         onClick={this.toggle}
-      >Add Item</Button>
-        </div>
+      >Add Favorite</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}

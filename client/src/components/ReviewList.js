@@ -7,16 +7,10 @@ import { getReviews, deleteReview } from '../actions/reviewActions';
 import PropTypes from 'prop-types';
 
 const reviewStyling = {
-   margin: '.5vh auto',
-   display:'inline_block',
-   width: '100%',
-   flexWrap: 'wrap',
-   justifyContent:'center',
-   border:'2px grey solid',
-}
-
-const cardStyling = {
-  margin:'0',
+  marginTop: '8vh',
+  display:'inline_block',
+  justifyContent:'center',
+  border:'2px grey solid',
 }
 
 const reviewBodyStyling = {

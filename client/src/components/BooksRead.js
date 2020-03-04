@@ -10,6 +10,8 @@ const favoritesList = {
   border:'2px grey solid',
   margin: '.25vh',
   width:'15vw',
+  float:'left',
+  marginLeft:'28vw',
 }
 
 const listBody = {
@@ -18,7 +20,7 @@ const listBody = {
   fontWeight: '600',
 }
 
-class ShoppingList extends Component {
+class BooksRead extends Component {
   componentDidMount(){
     this.props.getItems();
   }
@@ -53,7 +55,7 @@ class ShoppingList extends Component {
       );
     }
   }
-ShoppingList.propTypes = {
+BooksRead.propTypes = {
   getItems: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 }
@@ -62,4 +64,4 @@ const mapStateToProps = (state) => ({
   item: state.item
 });
 
-export default connect(mapStateToProps, { getItems, deleteItem })(ShoppingList);
+export default connect(mapStateToProps, { getItems, deleteItem })(BooksRead);

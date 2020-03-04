@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import {
+  Container,
   Button,
   Modal,
   ModalHeader,
@@ -12,9 +13,7 @@ import {
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 
-
-
-class ItemModal extends Component {
+class BooksModal extends Component {
   state = {
     modal: false,
     name: ''
@@ -43,12 +42,12 @@ class ItemModal extends Component {
   render() {
     return(
       <div>
+      <Container>
       <Button
-        className = "list-button"
+        className ="list-button"
         color="dark"
         onClick={this.toggle}
       >Add Book</Button>
-
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
@@ -71,6 +70,7 @@ class ItemModal extends Component {
           </Form>
         </ModalBody>
       </Modal>
+      </Container>
       </div>
     );
   }
@@ -79,4 +79,4 @@ class ItemModal extends Component {
 const mapStateToProps = state => ({
   item: state.item
 });
-export default connect(mapStateToProps, { addItem })(ItemModal);
+export default connect(mapStateToProps, { addItem })(BooksModal);
