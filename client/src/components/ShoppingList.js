@@ -7,10 +7,8 @@ import PropTypes from 'prop-types';
 
 const favoritesList = {
   display:'inline-block',
-  width:'39%',
   border:'2px grey solid',
   margin: '.25vh',
-  marginLeft:'7.5vw'
 }
 
 const listBody = {

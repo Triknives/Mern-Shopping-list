@@ -9,7 +9,7 @@ import PropTypes from 'prop-types';
 const reviewStyling = {
    margin: '.5vh auto',
    display:'inline_block',
-   width: '79%',
+   width: '100%',
    flexWrap: 'wrap',
    justifyContent:'center',
    border:'2px grey solid',

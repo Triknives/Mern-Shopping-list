@@ -7,11 +7,9 @@ import PropTypes from 'prop-types';
 
 const toReadList = {
   display:'inline-block',
-  width:'39%',
   float: 'right',
   border:'2px grey solid',
   margin: '.25vh',
-  marginRight:'7.5vw',
   }
 
   const listBody = {

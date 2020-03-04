@@ -21,9 +21,9 @@ class App extends Component {
           <AppNavbar/>
           <Container>
           <FavoritesList/>
-        
+          <ItemModal/>
           <ShoppingList/>
-        
+
           <ReviewList/>
           <ReviewModal/>
           </Container>
