@@ -6,11 +6,8 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 const bookList = {
-  display:'inline-block',
-  float: 'left',
   border:'2px grey solid',
   margin: '.25vh',
-  width:'15vw',
   }
 
   const listBody = {
@@ -30,7 +27,7 @@ class FavoritesList extends Component {
 
     const { items } = this.props.item;
     return(
-      <div>
+        <div>
           <ListGroup style = {bookList}>
             <TransitionGroup className="shopping-list">
             {items.map(({_id, name}) => (

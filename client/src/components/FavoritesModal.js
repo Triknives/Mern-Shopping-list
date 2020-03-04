@@ -7,7 +7,8 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
+  Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
@@ -15,9 +16,6 @@ import { addItem } from '../actions/itemActions';
 const favButton = {
 
 }
-
-
-
 
 class FavoritesModal extends Component {
   state = {
@@ -47,7 +45,7 @@ class FavoritesModal extends Component {
 
   render() {
     return(
-      <div>
+        <Container fluid={true}>
       <Button
         className = "favButton"
         color="dark"
@@ -75,7 +73,7 @@ class FavoritesModal extends Component {
           </Form>
         </ModalBody>
       </Modal>
-      </div>
+    </Container>
     );
   }
 }

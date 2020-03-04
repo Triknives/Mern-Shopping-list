@@ -6,16 +6,14 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 const favoritesList = {
-  display:'inline-block',
   border:'2px grey solid',
   margin: '.25vh',
-  width:'15vw',
+  width: '100%',
 }
 
 const listBody = {
   backgroundColor: '#324087',
   color: 'white',
-  fontWeight: '600',
 }
 
 class ShoppingList extends Component {
@@ -26,10 +24,10 @@ class ShoppingList extends Component {
     this.props.deleteItem(id);
   };
   render() {
-
     const { items } = this.props.item;
+
     return(
-      <div>
+        <div>
           <ListGroup style = {favoritesList}>
             <TransitionGroup className="shopping-list">
             {items.map(({_id, name}) => (

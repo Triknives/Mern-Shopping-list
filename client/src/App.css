@@ -26,23 +26,25 @@ transition: opacity 1000ms ease-in;
 }
 
 .wantButton {
-  display:inline-block;
-  float:right;
-  margin-right: 11vw;
+  width: 7vw;
 }
 
 .favButton {
-  display:inline-block;
-  float:right;
-  margin-right: 11.5vw;
+width: 8vw;
 }
 
 .readButton {
-  display:inline-block;
-  float:right;
-  margin-right: 3.5vw;
+width: 6vw;
+
 }
 
 .list-group{
   margin:0;
 }
+
+.container-fluid {
+  display:flex;
+  margin:0 auto;
+}
+
+/* code block */

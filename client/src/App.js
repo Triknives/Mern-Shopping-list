@@ -12,6 +12,7 @@ import FavoritesModal from './components/FavoritesModal';
 import ReviewModal from './components/reviewModal';
 import BooksRead from './components/BooksRead';
 import BooksModal from './components/BooksModal';
+import ListContainer from './components/listContainer';
 import { Container } from 'reactstrap';
 
 
@@ -21,13 +22,8 @@ class App extends Component {
       <Provider store={store}>
         <div className="App">
           <AppNavbar/>
-          <BooksRead/>
-          <FavoritesList/>
-          <ShoppingList/>
-          <BooksModal/>
-          <ItemModal/>
-          <FavoritesModal/>
           <Container>
+          <ListContainer/>
           <ReviewList/>
           <ReviewModal/>
           </Container>

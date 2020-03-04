@@ -6,18 +6,13 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 const favoritesList = {
-  display:'inline-block',
   border:'2px grey solid',
   margin: '.25vh',
-  width:'15vw',
-  float:'left',
-  marginLeft:'27vw',
 }
 
 const listBody = {
   backgroundColor: '#324087',
   color: 'white',
-  fontWeight: '600',
 }
 
 class BooksRead extends Component {

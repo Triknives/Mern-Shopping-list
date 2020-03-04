@@ -7,7 +7,8 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
+  Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
@@ -42,7 +43,7 @@ class ItemModal extends Component {
 
   render() {
     return(
-      <div>
+        <Container fluid={true}>
       <Button
         className = "wantButton"
         color="dark"
@@ -70,7 +71,7 @@ class ItemModal extends Component {
           </Form>
         </ModalBody>
       </Modal>
-      </div>
+      </Container>
     );
   }
 }

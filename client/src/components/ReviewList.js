@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {   Card, CardImg, CardText, CardBody, CardLink,
-  CardTitle, CardSubtitle , Button} from 'reactstrap';
+  CardTitle, CardSubtitle , Button, Container} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import { getReviews, deleteReview } from '../actions/reviewActions';
@@ -44,6 +44,7 @@ class ReviewList extends Component {
 
     const { reviews } = this.props.review;
     return(
+    <Container fluid={true}>
       <div style = {reviewStyling}>
       {reviews.map(({_id, post}) => (
         <Card style = {reviewBodyStyling}>
@@ -66,6 +67,7 @@ class ReviewList extends Component {
         </Card>
       ))}
     </div>
+    </Container>
     );
   }
 }

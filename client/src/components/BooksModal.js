@@ -8,7 +8,7 @@ import {
   Form,
   FormGroup,
   Label,
-  Input
+  Input,
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
@@ -41,13 +41,12 @@ class BooksModal extends Component {
 
   render() {
     return(
-      <div>
-      <Container>
+      <Container fluid={true}>
       <Button
         className = "readButton"
         color="dark"
         onClick={this.toggle}
-      >Add Read Book</Button>
+      >Add Book</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
@@ -71,7 +70,6 @@ class BooksModal extends Component {
         </ModalBody>
       </Modal>
       </Container>
-      </div>
     );
   }
 }
