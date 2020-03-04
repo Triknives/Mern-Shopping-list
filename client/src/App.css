@@ -3,6 +3,8 @@ body {
   background-color: #324087;
 }
 
+
+
 .remove-btn {
   margin-right: 0.5rem;
 }
@@ -26,7 +28,7 @@ transition: opacity 1000ms ease-in;
 }
 
 .wantButton {
-  width: 7vw;
+  width: 8vw;
 }
 
 .favButton {
@@ -34,17 +36,10 @@ width: 8vw;
 }
 
 .readButton {
-width: 6vw;
+width: 8vw;
 
 }
 
-.list-group{
-  margin:0;
+li {
+  list-style: none;
 }
-
-.container-fluid {
-  display:flex;
-  margin:0 auto;
-}
-
-/* code block */

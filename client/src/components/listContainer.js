@@ -8,7 +8,7 @@ import ItemModal from './ItemModal';
 
 const listContainerAtt = {
   display:'flex',
-  flexDirection:'column',
+  flexDirection:'row',
 
 }
 
@@ -17,11 +17,11 @@ function ListContainer()  {
     return(
       <div style = {listContainerAtt}>
       <FavoritesList/>
-      <FavoritesModal/>
+
       <BooksRead/>
-      <BooksModal/>
+
       <ShoppingList/>
-      <ItemModal/>
+
       </div>
     )
 }

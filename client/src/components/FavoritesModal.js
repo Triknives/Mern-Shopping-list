@@ -13,10 +13,6 @@ import {
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 
-const favButton = {
-
-}
-
 class FavoritesModal extends Component {
   state = {
     modal: false,
@@ -45,9 +41,8 @@ class FavoritesModal extends Component {
 
   render() {
     return(
-        <Container fluid={true}>
+      <div>
       <Button
-        className = "favButton"
         color="dark"
         onClick={this.toggle}
       >Add Favorite</Button>
@@ -73,7 +68,7 @@ class FavoritesModal extends Component {
           </Form>
         </ModalBody>
       </Modal>
-    </Container>
+      </div>
     );
   }
 }

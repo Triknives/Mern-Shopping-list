@@ -1,15 +1,14 @@
 import React, { Component } from 'react';
-import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
-import { CSSTransition, TransitionGroup } from 'react-transition-group';
+import { Container , Button} from 'reactstrap';
 import { connect } from 'react-redux';
 import { getItems, deleteItem } from '../actions/itemActions';
+import ItemModal from './ItemModal';
 import PropTypes from 'prop-types';
 
-const favoritesList = {
-  border:'2px grey solid',
-  margin: '.25vh',
-  width: '100%',
-}
+const tGroup = {
+  width: '30%',
+  border:'solid grey 2px',
+  }
 
 const listBody = {
   backgroundColor: '#324087',
@@ -27,30 +26,22 @@ class ShoppingList extends Component {
     const { items } = this.props.item;
 
     return(
-        <div>
-          <ListGroup style = {favoritesList}>
-            <TransitionGroup className="shopping-list">
-            {items.map(({_id, name}) => (
-              <CSSTransition key= {_id} timeout={500} classNames="fade">
-                <ListGroupItem style = {listBody}>
-                <Button
-                  className="remove-btn"
-                  color="danger"
-                  size="sm"
-                  onClick={this.onDeleteClick.bind(this, _id)}
-                  >
-                    &times;
-                  </Button>
-                {name}
-                </ListGroupItem>
-              </CSSTransition>
-            ))}
-            </TransitionGroup>
-          </ListGroup>
-        </div>
-      );
-    }
+      <div style = {tGroup}>
+          {items.map(({_id, name}) => (
+          <ul>
+              <li>
+              <button onClick={this.onDeleteClick.bind(this, _id)}>
+                  &times;
+                </button>
+              {name}
+              </li>
+          </ul>
+          ))}
+        <ItemModal/>
+      </div>
+    );
   }
+}
 ShoppingList.propTypes = {
   getItems: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired

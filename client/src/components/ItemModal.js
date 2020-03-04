@@ -43,7 +43,7 @@ class ItemModal extends Component {
 
   render() {
     return(
-        <Container fluid={true}>
+      <div>
       <Button
         className = "wantButton"
         color="dark"
@@ -71,7 +71,7 @@ class ItemModal extends Component {
           </Form>
         </ModalBody>
       </Modal>
-      </Container>
+      </div>
     );
   }
 }

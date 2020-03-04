@@ -1,19 +1,19 @@
 import React, { Component } from 'react';
-import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
+import { Container ,Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
+import FavoritesModal from './FavoritesModal';
 import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
-const bookList = {
-  border:'2px grey solid',
-  margin: '.25vh',
+const tGroup = {
+  width:'30%',
+  border:'solid grey 2px',
   }
 
   const listBody = {
     backgroundColor: '#324087',
     color: 'white',
-    fontWeight: '600',
   }
 
 class FavoritesList extends Component {
@@ -27,26 +27,18 @@ class FavoritesList extends Component {
 
     const { items } = this.props.item;
     return(
-        <div>
-          <ListGroup style = {bookList}>
-            <TransitionGroup className="shopping-list">
+        <div style = {tGroup}>
             {items.map(({_id, name}) => (
-              <CSSTransition key= {_id} timeout={500} classNames="fade">
-                <ListGroupItem style = {listBody}>
-                <Button
-                  className="remove-btn"
-                  color="danger"
-                  size="sm"
-                  onClick={this.onDeleteClick.bind(this, _id)}
-                  >
+            <ul>
+                <li>
+                <button onClick={this.onDeleteClick.bind(this, _id)}>
                     &times;
-                  </Button>
+                  </button>
                 {name}
-                </ListGroupItem>
-              </CSSTransition>
+                </li>
+            </ul>
             ))}
-            </TransitionGroup>
-          </ListGroup>
+          <FavoritesModal/>
         </div>
       );
     }
