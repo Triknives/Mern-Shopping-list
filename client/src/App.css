@@ -25,12 +25,22 @@ opacity: 0.01;
 transition: opacity 1000ms ease-in;
 }
 
-
-
-.list-button {
+.wantButton {
   display:inline-block;
   float:right;
-  margin-right:9vw;
+  margin-right: 11vw;
+}
+
+.favButton {
+  display:inline-block;
+  float:right;
+  margin-right: 11.5vw;
+}
+
+.readButton {
+  display:inline-block;
+  float:right;
+  margin-right: 3.5vw;
 }
 
 .list-group{

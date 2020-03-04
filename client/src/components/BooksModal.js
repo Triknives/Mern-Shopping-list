@@ -44,15 +44,15 @@ class BooksModal extends Component {
       <div>
       <Container>
       <Button
-        className ="list-button"
+        className = "readButton"
         color="dark"
         onClick={this.toggle}
-      >Add Book</Button>
+      >Add Read Book</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
       >
-        <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>
+        <ModalHeader toggle={this.toggle}>Add Recently Read Book</ModalHeader>
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
@@ -60,7 +60,7 @@ class BooksModal extends Component {
                 <Input
                   type="text"
                   name="name"
-                  placeholder="Add shopping item"
+                  placeholder="Add The Book You Read!"
                   onChange={this.onChange}
                 />
                 <Button color="dark" block>

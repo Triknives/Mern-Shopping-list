@@ -44,16 +44,15 @@ class ItemModal extends Component {
     return(
       <div>
       <Button
-        className = "list-button"
+        className = "wantButton"
         color="dark"
         onClick={this.toggle}
-      >Add Book</Button>
-
+      >Next Book</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
       >
-        <ModalHeader toggle={this.toggle}>Add To Shopping List</ModalHeader>
+        <ModalHeader toggle={this.toggle}>Add Next Book You Want</ModalHeader>
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
@@ -61,7 +60,7 @@ class ItemModal extends Component {
                 <Input
                   type="text"
                   name="name"
-                  placeholder="Add shopping item"
+                  placeholder="Add The Next Book You Want!"
                   onChange={this.onChange}
                 />
                 <Button color="dark" block>
