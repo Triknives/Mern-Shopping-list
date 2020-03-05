@@ -16,7 +16,8 @@ import { addItem } from '../actions/itemActions';
 class BooksModal extends Component {
   state = {
     modal: false,
-    name: ''
+    name: '',
+    author: '',
   }
   toggle = () => {
     this.setState({
@@ -25,12 +26,14 @@ class BooksModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
+    this.setState({[e.target.author]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();
 
     const newItem = {
-      name: this.state.name
+      name: this.state.name,
+      author:this.state.author
     }
     // Add item via AddItem actions
     this.props.addItem(newItem);
@@ -54,11 +57,18 @@ class BooksModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="item">Item</Label>
+              <Label for="item">Book</Label>
                 <Input
                   type="text"
                   name="name"
                   placeholder="Add The Book You Read!"
+                  onChange={this.onChange}
+                />
+                <Label for="item">Author</Label>
+                <Input
+                  type="text"
+                  name="author"
+                  placeholder="Author"
                   onChange={this.onChange}
                 />
                 <Button color="dark" block>

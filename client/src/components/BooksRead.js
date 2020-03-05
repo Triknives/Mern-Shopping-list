@@ -34,13 +34,13 @@ class BooksRead extends Component {
     const { items } = this.props.item;
     return(
       <div style = {tGroup}>
-          {items.map(({_id, name}) => (
+          {items.map(({_id, name, author}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                   &times;
                 </Button>
-              {name}
+              <strong>Title:</strong> {name} - <em>Author:</em> {author}
               </li>
           </ul>
           ))}

@@ -19,7 +19,8 @@ router.get('/', (req, res) => {
 router.post('/', (req, res) => {
   console.log(req.body)
   const newItem = new Item({
-    name: req.body.name
+    name: req.body.name,
+    author: req.body.author
   });
   newItem.save().then(item => res.json(item));
   console.log("item added")
