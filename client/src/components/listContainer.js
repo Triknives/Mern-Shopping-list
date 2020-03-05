@@ -9,21 +9,19 @@ import ItemModal from './ItemModal';
 const listContainerAtt = {
   display:'flex',
   flexDirection:'row',
+  width:'100%',
 
 }
 
 function ListContainer()  {
 
-    return(
-      <div style = {listContainerAtt}>
+  return(
+    <div style = {listContainerAtt}>
       <FavoritesList/>
-
       <BooksRead/>
-
       <ShoppingList/>
-
-      </div>
-    )
+    </div>
+  )
 }
 
 export default ListContainer;

@@ -43,7 +43,6 @@ class BooksModal extends Component {
     return(
       <div>
       <Button
-        className = "readButton"
         color="dark"
         onClick={this.toggle}
       >Add Book</Button>

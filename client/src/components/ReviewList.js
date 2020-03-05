@@ -7,10 +7,11 @@ import { getReviews, deleteReview } from '../actions/reviewActions';
 import PropTypes from 'prop-types';
 
 const reviewStyling = {
-  marginTop: '8vh',
+  marginTop: '6vh',
   display:'inline_block',
   justifyContent:'center',
   border:'2px grey solid',
+  width: '100%'
 }
 
 const reviewBodyStyling = {
@@ -44,7 +45,7 @@ class ReviewList extends Component {
 
     const { reviews } = this.props.review;
     return(
-    <Container fluid={true}>
+
       <div style = {reviewStyling}>
       {reviews.map(({_id, post}) => (
         <Card style = {reviewBodyStyling}>
@@ -67,7 +68,6 @@ class ReviewList extends Component {
         </Card>
       ))}
     </div>
-    </Container>
     );
   }
 }

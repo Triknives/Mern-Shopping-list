@@ -7,13 +7,15 @@ import { getItems, deleteItem } from '../actions/itemActions';
 import PropTypes from 'prop-types';
 
 const tGroup = {
-  width:'30%',
+  width:'34%',
   border:'solid grey 2px',
   }
 
   const listBody = {
     backgroundColor: '#324087',
     color: 'white',
+    fontWeight: '600',
+    fontSize:'1rem',
   }
 
 class FavoritesList extends Component {
@@ -29,11 +31,11 @@ class FavoritesList extends Component {
     return(
         <div style = {tGroup}>
             {items.map(({_id, name}) => (
-            <ul>
+            <ul style = {listBody}>
                 <li>
-                <button onClick={this.onDeleteClick.bind(this, _id)}>
+                <Button Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                     &times;
-                  </button>
+                  </Button>
                 {name}
                 </li>
             </ul>

@@ -45,7 +45,6 @@ class ItemModal extends Component {
     return(
       <div>
       <Button
-        className = "wantButton"
         color="dark"
         onClick={this.toggle}
       >Next Book</Button>
