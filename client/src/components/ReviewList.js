@@ -10,13 +10,13 @@ const reviewStyling = {
   marginTop: '6vh',
   display:'inline_block',
   justifyContent:'center',
-  border:'2px grey solid',
   width: '100%'
 }
 
 const reviewBodyStyling = {
   padding:'1vh',
-  backgroundColor:'#324087',
+  backgroundColor: 'black',
+  opacity:'.75',
 }
 const textStyling = {
   marginLeft: '-20px',
@@ -25,7 +25,8 @@ const textStyling = {
   fontWeight: '600',
 }
 const listBody = {
-  backgroundColor: '#6a85de',
+
+
 }
 
 const reviewText = {

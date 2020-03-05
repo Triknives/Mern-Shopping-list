@@ -7,11 +7,13 @@ import PropTypes from 'prop-types';
 
 const tGroup = {
   width: '34%',
-  border:'solid grey 2px',
+  backgroundColor: 'black',
+  opacity:'.75',
+  margin: '1vh',
+  padding:'1vh',
   }
 
 const listBody = {
-  backgroundColor: '#324087',
   color: 'white',
   fontWeight: '600',
   fontSize:'1rem',

@@ -7,15 +7,20 @@ import BooksModal from './BooksModal';
 import PropTypes from 'prop-types';
 
 const listBody = {
-  backgroundColor: '#324087',
+  opacity: '1',
   color: 'white',
   fontWeight: '600',
   fontSize:'1rem',
+
 }
 
 const tGroup = {
   width: '32%',
-  border:'solid grey 2px'
+
+  backgroundColor: 'black',
+  opacity:'.75',
+  margin: '1vh',
+  padding:'1vh',
 }
 
 const groupWidth = {

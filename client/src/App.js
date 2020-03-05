@@ -21,8 +21,8 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div className="App">
+        <Container>
           <AppNavbar/>
-          <Container>
           <ListContainer/>
           <ReviewList/>
           <ReviewModal/>
