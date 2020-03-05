@@ -1,8 +1,8 @@
-# _{Application Name}_
+# _Toshou_
 
-#### _{Brief description of application}, {Date of current version}_
+#### _An application that helps users track their current completed books, wanted books, and recently reviewed books. March 3rd, 2020_
 
-#### By _**{List of contributors}**_
+#### By _**Brett Cordell**_
 
 ## Description
 
