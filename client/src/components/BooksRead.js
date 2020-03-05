@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getCompletedBooks, deleteCompletedBook } from '../actions/completedBooksActions';
 import BooksModal from './BooksModal';
 import PropTypes from 'prop-types';
 
@@ -11,12 +11,10 @@ const listBody = {
   color: 'white',
   fontWeight: '600',
   fontSize:'1rem',
-
 }
 
 const tGroup = {
   width: '32%',
-
   backgroundColor: 'black',
   opacity:'.75',
   margin: '1vh',
@@ -29,23 +27,27 @@ const groupWidth = {
 
 class BooksRead extends Component {
   componentDidMount(){
-    this.props.getItems();
+    this.props.getCompletedBooks();
   }
   onDeleteClick = (id) => {
-    this.props.deleteItem(id);
+    this.props.deleteCompletedBook(id);
   };
   render() {
 
-    const { items } = this.props.item;
+    const { completedBooks } = this.props.completedBook;
+    
     return(
+
       <div style = {tGroup}>
-          {items.map(({_id, name, author}) => (
+          {completedBooks.map(({_id, title, author, completedDate}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                   &times;
                 </Button>
-              <strong>Title:</strong> {name} - <em>Author:</em> {author}
+              <strong>Title:</strong> {title}
+              <em>Author:</em> {author}
+              <em>Date Finished:</em> {completedDate}
               </li>
           </ul>
           ))}
@@ -55,12 +57,12 @@ class BooksRead extends Component {
     }
   }
 BooksRead.propTypes = {
-  getItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
+  getCompletedBooks: PropTypes.func.isRequired,
+  completedBook: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  item: state.item
+  completedBook: state.completedBook
 });
 
-export default connect(mapStateToProps, { getItems, deleteItem })(BooksRead);
+export default connect(mapStateToProps, { getCompletedBooks, deleteCompletedBook })(BooksRead);

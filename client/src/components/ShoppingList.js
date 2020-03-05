@@ -30,6 +30,7 @@ class ShoppingList extends Component {
     const { items } = this.props.item;
 
     return(
+
       <div style = {tGroup}>
           {items.map(({_id, name}) => (
         <ul style = {listBody}>
