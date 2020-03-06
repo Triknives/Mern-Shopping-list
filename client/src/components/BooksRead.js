@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getCompletedBooks, deleteCompletedBook } from '../actions/completedBooksActions';
+import { getReadBooks, deleteReadBook } from '../actions/readBookActions';
 import BooksModal from './BooksModal';
 import PropTypes from 'prop-types';
 
@@ -27,19 +27,18 @@ const groupWidth = {
 
 class BooksRead extends Component {
   componentDidMount(){
-    this.props.getCompletedBooks();
+    this.props.getReadBooks();
   }
   onDeleteClick = (id) => {
-    this.props.deleteCompletedBook(id);
+    this.props.deleteReadBook(id);
   };
   render() {
-
-    const {completedBooks} = this.props.completedBook;
-
+    
+  const { readBooks } = this.props.readBook;
     return(
 
       <div style = {tGroup}>
-          {completedBooks.map(({_id, title, author, dateCompleted}) => (
+          {readBooks.map(({_id, title, author}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
@@ -47,7 +46,6 @@ class BooksRead extends Component {
                 </Button>
               <strong>Title:</strong> {title}
               <em>Author:</em> {author}
-              <em>Date Finished:</em> {dateCompleted}
               </li>
           </ul>
           ))}
@@ -57,12 +55,12 @@ class BooksRead extends Component {
     }
   }
 BooksRead.propTypes = {
-  getCompletedBooks: PropTypes.func.isRequired,
-  completedBook: PropTypes.object.isRequired
+  getReadBooks: PropTypes.func.isRequired,
+  readBook: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  completedBook: state.completedBook
+  readBook: state.readBook
 });
 
-export default connect(mapStateToProps, { getCompletedBooks, deleteCompletedBook })(BooksRead);
+export default connect(mapStateToProps, { getReadBooks, deleteReadBook })(BooksRead);

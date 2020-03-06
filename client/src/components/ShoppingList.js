@@ -32,13 +32,13 @@ class ShoppingList extends Component {
     return(
 
       <div style = {tGroup}>
-          {items.map(({_id, name}) => (
+          {items.map(({_id, name, author}) => (
         <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                   &times;
                 </Button>
-              {name}
+              {name} {author}
               </li>
           </ul>
           ))}

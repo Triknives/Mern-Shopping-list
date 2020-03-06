@@ -1,29 +1,28 @@
 const express = require('express');
 const router = express.Router();
 
-//Review model
-const CompletedBook = require('../../models/CompletedBook');
+//Completed Book model
+const ReadBook = require('../../models/ReadBook');
 
 // @route   GET api/Completed Books
 // @desc    Get ALL Completed Books
 // @access  Public
 router.get('/',(req, res ) => {
-  CompletedBook.find()
+  ReadBook.find()
     .sort({date: -1})
-    .then(completedBooks => res.json(completedBooks));
+    .then(readBooks => res.json(readBooks));
 });
 
-// @route   POST api/CompletedBooks
+// @route   POST api/BooksRead
 // @desc    Create A Completed Book
 // @access  Public
 router.post('/', (req, res) => {
   console.log(req.body)
-  const newCompletedBook = new CompletedBook({
+  const newReadBook = new ReadBook({
     title: req.body.title,
     author: req.body.author,
-    dateCompleted: req.body.dateCompleted
   });
-  newCompletedBook.save().then(completedBook => res.json(completedBook));
+  newReadBook.save().then(readBook => res.json(readBook));
     console.log("Completed Book Added")
 });
 
@@ -31,8 +30,8 @@ router.post('/', (req, res) => {
 // @desc    Delete A Completed Book
 // @access  Public
 router.delete('/:id', (req, res) => {
-    CompletedBook.findById(req.params.id)
-      .then(completedBook => completedBook.remove().then(() => res.json({success: true})))
+    ReadBook.findById(req.params.id)
+      .then(readBook => readBook.remove().then(() => res.json({success: true})))
       .catch(err => res.status(404).json({success: false}));
   });
 

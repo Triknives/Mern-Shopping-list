@@ -13,12 +13,11 @@ import {
 import { connect } from 'react-redux';
 import { addItem } from '../actions/itemActions';
 
-
-
 class ItemModal extends Component {
   state = {
     modal: false,
-    name: ''
+    name: '',
+    author:''
   }
   toggle = () => {
     this.setState({
@@ -27,12 +26,14 @@ class ItemModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
+    this.setState({[e.target.author]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();
 
     const newItem = {
-      name: this.state.name
+      name: this.state.name,
+      author: this.state.author
     }
     // Add item via AddItem actions
     this.props.addItem(newItem);
@@ -56,13 +57,20 @@ class ItemModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="item">Item</Label>
+              <Label for="Author">Author</Label>
                 <Input
                   type="text"
-                  name="name"
-                  placeholder="Add The Next Book You Want!"
+                  name="author"
+                  placeholder="Who Wrote it!"
                   onChange={this.onChange}
                 />
+                <Label for="item">Item</Label>
+                  <Input
+                    type="text"
+                    name="name"
+                    placeholder="Add The Next Book You Want!"
+                    onChange={this.onChange}
+                  />
                 <Button color="dark" block>
                 Add Item
               </Button>

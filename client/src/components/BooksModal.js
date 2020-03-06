@@ -11,14 +11,13 @@ import {
   Input,
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addCompletedBook } from '../actions/completedBooksActions';
+import { addReadBook } from '../actions/readBookActions';
 
 class BooksModal extends Component {
   state = {
     modal: false,
     title: '',
     author: '',
-    dateCompleted:'',
   }
   toggle = () => {
     this.setState({
@@ -28,18 +27,16 @@ class BooksModal extends Component {
   onChange = (e) => {
     this.setState({[e.target.title]: e.target.value});
     this.setState({[e.target.author]: e.target.value});
-    this.setState({[e.target.dateCompleted]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();
 
-    const newCompletedBook = {
+    const newReadBook = {
       title: this.state.title,
-      author:this.state.author,
-      dateCompleted:this.state.dateCompleted,
+      author: this.state.author
     }
     // Add item via Add Completed Book actions
-    this.props.addCompletedBook(newCompletedBook);
+    this.props.addReadBook(newReadBook);
 
     //Close Modal
     this.toggle();
@@ -60,24 +57,17 @@ class BooksModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="completedBooks">Book</Label>
+              <Label for="title">Book</Label>
                 <Input
                   type="text"
-                  name="name"
+                  name="title"
                   placeholder="Add The Book You Read!"
                   onChange={this.onChange}
                 />
-                <Label for="completedBooks">Author</Label>
+                <Label for="author">Author</Label>
                 <Input
                   type="text"
                   name="author"
-                  placeholder="Author"
-                  onChange={this.onChange}
-                />
-                <Label for="completedBooks">Date Completed</Label>
-                <Input
-                  type="text"
-                  name="completedBooks"
                   placeholder="Author"
                   onChange={this.onChange}
                 />
@@ -94,6 +84,6 @@ class BooksModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  completedBook: state.completedBook
+  readBook: state.readBook
 });
-export default connect(mapStateToProps, { addCompletedBook })(BooksModal);
+export default connect(mapStateToProps, { addReadBook })(BooksModal);

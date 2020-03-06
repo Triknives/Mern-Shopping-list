@@ -18,7 +18,6 @@ function ListContainer()  {
   return(
     <div style = {listContainerAtt}>
       <FavoritesList/>
-      <BooksRead/>
       <ShoppingList/>
     </div>
   )

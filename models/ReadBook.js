@@ -2,17 +2,12 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 // Create Schema
-const CompletedSchema = new Schema ({
-
+const ReadBookSchema = new Schema ({
   title: {
     type: String,
     required: true,
   },
   author: {
-    type: String,
-    required: true,
-  },
-  dateCompleted: {
     type: String,
     required: true,
   },
@@ -22,4 +17,4 @@ const CompletedSchema = new Schema ({
   }
 });
 
-module.exports = CompletedBook = mongoose.model('completedBook', CompletedSchema);
+module.exports = ReadBook = mongoose.model('readBook', ReadBookSchema);
