@@ -18,8 +18,6 @@ const reviewButton = {
   float:'left'
 }
 
-
-
 class ReviewModal extends Component {
   state = {
     modal: false,
@@ -32,7 +30,8 @@ class ReviewModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
-    console.log(e.target)
+    console.log(e.target.name)
+    console.log(e.target.value)
   }
   onSubmit = (e) => {
     e.preventDefault();

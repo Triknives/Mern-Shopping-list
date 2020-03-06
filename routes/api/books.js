@@ -20,10 +20,11 @@ router.post('/', (req, res) => {
   console.log(req.body)
   const newBook = new Book({
     title: req.body.title,
-    author: req.body.author
+    writer: req.body.writer
   });
-  newBook.save().then(book => res.json(book));
-    console.log("Book Added")
+  newBook.save().then(book => res.json(book))
+  .catch(err => res.status(404).json({success: false}));
+  console.log("book added")
 });
 
 // @route   Delete api/completedBooks/:id

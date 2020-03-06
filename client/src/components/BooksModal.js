@@ -17,7 +17,7 @@ class BooksModal extends Component {
   state = {
     modal: false,
     title: '',
-    author: ''
+    writer:''
   }
   toggle = () => {
     this.setState({
@@ -25,22 +25,25 @@ class BooksModal extends Component {
     });
   }
   onChange = (e) => {
-    this.setState({[e.target.title]: e.target.value});
-    this.setState({[e.target.author]: e.target.value});
+    this.setState({[e.target.title]: e.target.value})
+    this.setState({[e.target.writer]: e.target.value});
+    console.log(e.target.value)
   }
   onSubmit = (e) => {
     e.preventDefault();
 
     const newBook = {
-      title: this.state.title,
-      author: this.state.author
+      title: this.props.title,
+      writer: this.props.writer
     }
-    // Add book via Add Book actions
+    console.log(this.state.title)
+    // Add item via AddItem actions
     this.props.addBook(newBook);
-
+    console.log(newBook)
     //Close Modal
     this.toggle();
   }
+
 
   render() {
     return(
@@ -57,10 +60,10 @@ class BooksModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="Author">Author</Label>
+              <Label for="Author">Writer</Label>
                 <Input
                   type="text"
-                  name="author"
+                  name="writer"
                   placeholder="Who Wrote it!"
                   onChange={this.onChange}
                 />

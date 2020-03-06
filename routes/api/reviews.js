@@ -21,8 +21,9 @@ router.post('/', (req, res) => {
   const newReview = new Review({
     post: req.body.post
   });
-  newReview.save().then(review => res.json(review));
-    console.log("Review added")
+  newReview.save().then(review => res.json(review))
+  .catch(err => res.status(404).json({success: false}));
+  console.log("Review added")
 });
 
 // @route   Delete api/reviews/:id

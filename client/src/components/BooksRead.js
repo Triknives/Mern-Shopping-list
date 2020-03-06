@@ -38,14 +38,14 @@ class BooksRead extends Component {
     return(
 
       <div style = {tGroup}>
-          {books.map(({_id, title, author}) => (
+          {books.map(({_id, title, writer}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                   &times;
                 </Button>
               <strong>Title:</strong> {title}
-              <em>Author:</em> {author}
+              <em>Author:</em> {writer}
               </li>
           </ul>
           ))}
