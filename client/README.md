@@ -26,6 +26,8 @@ _Please send and e-mail to Cordell.desu@gmail.com if you have any specific bugs 
 
 * _This application is built utilizing the MERN stack_
 * _Axios_
+* _React_
+* _Node.js_
 * _Express_
 * _MongoDb_
 * _Atlas Mongo Server Hosting_
