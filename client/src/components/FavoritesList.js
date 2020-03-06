@@ -20,6 +20,11 @@ const tGroup = {
     fontSize:'1rem',
   }
 
+  const listHeader = {
+    opacity:'1',
+    color:'yellow',
+  }
+
 class FavoritesList extends Component {
   componentDidMount(){
     this.props.getFinishedBooks();
@@ -32,6 +37,7 @@ class FavoritesList extends Component {
     const { finishedBooks } = this.props.finishedBook;
     return(
         <div style = {tGroup}>
+        <h5 style = {listHeader}> Recently Finished </h5>
             {finishedBooks.map(({_id, name, author}) => (
             <ul style = {listBody}>
                 <li>

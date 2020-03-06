@@ -19,6 +19,11 @@ const listBody = {
   fontSize:'1rem',
 }
 
+const listHeader = {
+  opacity:'1',
+  color:'yellow',
+}
+
 class ShoppingList extends Component {
   componentDidMount(){
     this.props.getItems();
@@ -32,6 +37,7 @@ class ShoppingList extends Component {
     return(
 
       <div style = {tGroup}>
+          <h5 style = {listHeader}>Book Queue</h5>
           {items.map(({_id, name, author}) => (
         <ul style = {listBody}>
               <li>
