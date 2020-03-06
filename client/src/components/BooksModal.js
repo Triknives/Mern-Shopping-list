@@ -11,7 +11,7 @@ import {
   Input,
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addReadBook } from '../actions/readBookActions';
+import { addBook } from '../actions/bookActions';
 
 class BooksModal extends Component {
   state = {
@@ -31,12 +31,12 @@ class BooksModal extends Component {
   onSubmit = (e) => {
     e.preventDefault();
 
-    const newReadBook = {
+    const newBook = {
       title: this.state.title,
       author: this.state.author
     }
     // Add item via Add Completed Book actions
-    this.props.addReadBook(newReadBook);
+    this.props.addBook(newBook);
 
     //Close Modal
     this.toggle();
@@ -84,6 +84,6 @@ class BooksModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  readBook: state.readBook
+  book: state.book
 });
-export default connect(mapStateToProps, { addReadBook })(BooksModal);
+export default connect(mapStateToProps, { addBook })(BooksModal);

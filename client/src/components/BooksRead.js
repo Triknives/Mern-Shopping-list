@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Container , ListGroup, ListGroupItem, Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
-import { getReadBooks, deleteReadBook } from '../actions/readBookActions';
+import { getBooks, deleteBook } from '../actions/bookActions';
 import BooksModal from './BooksModal';
 import PropTypes from 'prop-types';
 
@@ -27,18 +27,18 @@ const groupWidth = {
 
 class BooksRead extends Component {
   componentDidMount(){
-    this.props.getReadBooks();
+    this.props.getBooks();
   }
   onDeleteClick = (id) => {
     this.props.deleteReadBook(id);
   };
   render() {
-    
-  const { readBooks } = this.props.readBook;
+
+  const { books } = this.props.book;
     return(
 
       <div style = {tGroup}>
-          {readBooks.map(({_id, title, author}) => (
+          {books.map(({_id, title, author}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
@@ -55,12 +55,12 @@ class BooksRead extends Component {
     }
   }
 BooksRead.propTypes = {
-  getReadBooks: PropTypes.func.isRequired,
-  readBook: PropTypes.object.isRequired
+  getBooks: PropTypes.func.isRequired,
+  book: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  readBook: state.readBook
+  book: state.book
 });
 
-export default connect(mapStateToProps, { getReadBooks, deleteReadBook })(BooksRead);
+export default connect(mapStateToProps, { getBooks, deleteBook })(BooksRead);
