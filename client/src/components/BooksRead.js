@@ -34,12 +34,12 @@ class BooksRead extends Component {
   };
   render() {
 
-    const { completedBooks } = this.props.completedBook;
-    
+    const {completedBooks} = this.props.completedBook;
+
     return(
 
       <div style = {tGroup}>
-          {completedBooks.map(({_id, title, author, completedDate}) => (
+          {completedBooks.map(({_id, title, author, dateCompleted}) => (
           <ul style = {listBody}>
               <li>
               <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
@@ -47,7 +47,7 @@ class BooksRead extends Component {
                 </Button>
               <strong>Title:</strong> {title}
               <em>Author:</em> {author}
-              <em>Date Finished:</em> {completedDate}
+              <em>Date Finished:</em> {dateCompleted}
               </li>
           </ul>
           ))}

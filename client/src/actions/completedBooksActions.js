@@ -1,21 +1,20 @@
 import axios from 'axios';
 import { GET_COMPLETED_BOOKS, ADD_COMPLETED_BOOK, DELETE_COMPLETED_BOOK,COMPLETED_BOOKS_LOADING } from '../actions/types';
 
-export const getCompletedBooks = () => dispatch => {
+
+export const getCompletedBooks = () => dispatch =>  {
   dispatch(setCompletedBooksLoading());
-  axios.get('/api/completedBooks').then(res => {
+  axios.get('/api/completedBook').then(res =>
 
     dispatch({
       type: GET_COMPLETED_BOOKS,
       payload: res.data
-    });
-    console.log(res.data);
-  }
+    })
   )
 };
 
-export const addCompletedBooks = (completed) => dispatch => {
-  axios.post('/api/completedBooks', completed).then(res =>
+export const addCompletedBook = (completedBook) => dispatch => {
+  axios.post('/api/completedBook', completedBook).then(res =>
     dispatch({
       type: ADD_COMPLETED_BOOK,
       payload: res.data
@@ -24,7 +23,7 @@ export const addCompletedBooks = (completed) => dispatch => {
 };
 
 export const deleteCompletedBook = (id) => dispatch => {
-  axios.delete(`/api/completedBooks/${id}`).then(res =>
+  axios.delete(`/api/completedBook/${id}`).then(res =>
     dispatch({
       type:DELETE_COMPLETED_BOOK,
       payload: id,

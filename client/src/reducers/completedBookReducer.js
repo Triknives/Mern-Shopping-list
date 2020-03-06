@@ -21,7 +21,7 @@ export default function(state = initialState, action){
     case DELETE_COMPLETED_BOOK:
       return {
         ...state,
-          completedBooks: state.completedBooks.filter(completed => completed._id !== action.payload)
+          completedBooks: state.completedBooks.filter(completedBook => completedBook._id !== action.payload)
         };
     case COMPLETED_BOOKS_LOADING:
       return {
