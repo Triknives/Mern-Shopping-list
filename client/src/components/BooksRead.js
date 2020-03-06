@@ -30,7 +30,7 @@ class BooksRead extends Component {
     this.props.getBooks();
   }
   onDeleteClick = (id) => {
-    this.props.deleteReadBook(id);
+    this.props.deleteBook(id);
   };
   render() {
 

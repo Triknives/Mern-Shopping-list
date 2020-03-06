@@ -72,7 +72,7 @@ class ItemModal extends Component {
                     onChange={this.onChange}
                   />
                 <Button color="dark" block>
-                Add Item
+                Add Book
               </Button>
             </FormGroup>
           </Form>

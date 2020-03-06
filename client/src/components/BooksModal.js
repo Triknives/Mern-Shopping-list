@@ -17,7 +17,7 @@ class BooksModal extends Component {
   state = {
     modal: false,
     title: '',
-    author: '',
+    author: ''
   }
   toggle = () => {
     this.setState({
@@ -35,7 +35,7 @@ class BooksModal extends Component {
       title: this.state.title,
       author: this.state.author
     }
-    // Add item via Add Completed Book actions
+    // Add book via Add Book actions
     this.props.addBook(newBook);
 
     //Close Modal
@@ -57,18 +57,18 @@ class BooksModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="title">Book</Label>
-                <Input
-                  type="text"
-                  name="title"
-                  placeholder="Add The Book You Read!"
-                  onChange={this.onChange}
-                />
-                <Label for="author">Author</Label>
+              <Label for="Author">Author</Label>
                 <Input
                   type="text"
                   name="author"
-                  placeholder="Author"
+                  placeholder="Who Wrote it!"
+                  onChange={this.onChange}
+                />
+                <Label for="title">Title</Label>
+                <Input
+                  type="text"
+                  name="title"
+                  placeholder="Add The Book You Read"
                   onChange={this.onChange}
                 />
                 <Button color="dark" block>
