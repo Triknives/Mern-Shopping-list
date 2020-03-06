@@ -3,7 +3,7 @@ import { Container ,Button} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
 import FavoritesModal from './FavoritesModal';
-import { getItems, deleteItem } from '../actions/itemActions';
+import { getFinishedBooks, deleteFinishedBook } from '../actions/finishedBookActions';
 import PropTypes from 'prop-types';
 
 const tGroup = {
@@ -22,23 +22,23 @@ const tGroup = {
 
 class FavoritesList extends Component {
   componentDidMount(){
-    this.props.getItems();
+    this.props.getFinishedBooks();
   }
   onDeleteClick = (id) => {
-    this.props.deleteItem(id);
+    this.props.deleteFinishedBook(id);
   };
   render() {
 
-    const { items } = this.props.item;
+    const { finishedBooks } = this.props.finishedBook;
     return(
         <div style = {tGroup}>
-            {items.map(({_id, name}) => (
+            {finishedBooks.map(({_id, name, author}) => (
             <ul style = {listBody}>
                 <li>
                 <Button Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
                     &times;
                   </Button>
-                {name}
+                {name} {author}
                 </li>
             </ul>
             ))}
@@ -48,12 +48,12 @@ class FavoritesList extends Component {
     }
   }
 FavoritesList.propTypes = {
-  getItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
+  getFinishedBooks: PropTypes.func.isRequired,
+  finishedBook: PropTypes.object.isRequired
 }
 
 const mapStateToProps = (state) => ({
-  item: state.item
+  finishedBook: state.finishedBook
 });
 
-export default connect(mapStateToProps, { getItems, deleteItem })(FavoritesList);
+export default connect(mapStateToProps, { getFinishedBooks, deleteFinishedBook })(FavoritesList);

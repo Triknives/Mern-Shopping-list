@@ -15,3 +15,9 @@ export const GET_BOOKS = 'GET_BOOKS';
 export const ADD_BOOK = 'ADD_BOOK';
 export const DELETE_BOOK = 'DELETE_BOOK';
 export const BOOKS_LOADING = 'BOOKS_LOADING';
+
+// Favorite Actions
+export const GET_FINISHEDBOOKS = 'GET_FINISHEDBOOKS';
+export const ADD_FINISHED = 'ADD_FINISHED';
+export const DELETE_FINISHED= 'DELETE_FINISHED';
+export const FINISHED_BOOKS_LOADING = 'FINISHED_BOOKS_LOADING';

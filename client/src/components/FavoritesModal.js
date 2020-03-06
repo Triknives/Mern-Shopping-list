@@ -11,12 +11,13 @@ import {
   Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import { addFinishedBook } from '../actions/finishedBookActions';
 
 class FavoritesModal extends Component {
   state = {
     modal: false,
-    name: ''
+    name: '',
+    author:''
   }
   toggle = () => {
     this.setState({
@@ -25,15 +26,17 @@ class FavoritesModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
+    this.setState({[e.target.author]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();
 
-    const newItem = {
-      name: this.state.name
+    const newFinishedBook = {
+      name: this.state.name,
+      author:this.state.author
     }
     // Add item via AddItem actions
-    this.props.addItem(newItem);
+    this.props.addFinishedBook(newFinishedBook);
 
     //Close Modal
     this.toggle();
@@ -54,7 +57,14 @@ class FavoritesModal extends Component {
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
-              <Label for="item">Item</Label>
+              <Label for="Author">Author</Label>
+                <Input
+                  type="text"
+                  name="author"
+                  placeholder="Add a favorite of yours!"
+                  onChange={this.onChange}
+                />
+                <Label for="item">Item</Label>
                 <Input
                   type="text"
                   name="name"
@@ -76,4 +86,4 @@ class FavoritesModal extends Component {
 const mapStateToProps = state => ({
   item: state.item
 });
-export default connect(mapStateToProps, { addItem })(FavoritesModal);
+export default connect(mapStateToProps, { addFinishedBook})(FavoritesModal);
