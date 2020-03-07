@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Container , Button} from 'reactstrap';
 import { connect } from 'react-redux';
-import { getItems, deleteItem } from '../actions/itemActions';
-import ItemModal from './ItemModal';
+import { getItems, deleteItem } from '../actions/queueActions';
+import QueueModal from './QueueModal';
 import PropTypes from 'prop-types';
 
 const tGroup = {
@@ -24,7 +24,7 @@ const listHeader = {
   color:'yellow',
 }
 
-class ShoppingList extends Component {
+class BookQueue extends Component {
   componentDidMount(){
     this.props.getItems();
   }
@@ -48,12 +48,12 @@ class ShoppingList extends Component {
               </li>
           </ul>
           ))}
-        <ItemModal/>
+        <QueueModal/>
       </div>
     );
   }
 }
-ShoppingList.propTypes = {
+BookQueue.propTypes = {
   getItems: PropTypes.func.isRequired,
   item: PropTypes.object.isRequired
 }
@@ -62,4 +62,4 @@ const mapStateToProps = (state) => ({
   item: state.item
 });
 
-export default connect(mapStateToProps, { getItems, deleteItem })(ShoppingList);
+export default connect(mapStateToProps, { getItems, deleteItem })(BookQueue);

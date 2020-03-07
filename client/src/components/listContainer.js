@@ -3,8 +3,8 @@ import FavoritesList from './FavoritesList';
 import FavoritesModal from './FavoritesModal';
 import GoalsList from './GoalsList';
 import GoalsModal from './GoalsModal';
-import ShoppingList from './ShoppingList';
-import ItemModal from './ItemModal';
+import BookQueue from './BookQueue';
+import QueueModal from './QueueModal';
 
 const listContainerAtt = {
   display:'flex',
@@ -18,7 +18,7 @@ function ListContainer()  {
   return(
     <div style = {listContainerAtt}>
       <FavoritesList/>
-      <ShoppingList/>
+      <BookQueue/>
       <GoalsList/>
     </div>
   )

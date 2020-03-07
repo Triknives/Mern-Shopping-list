@@ -11,9 +11,9 @@ import {
   Container
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addItem } from '../actions/itemActions';
+import { addItem } from '../actions/queueActions';
 
-class ItemModal extends Component {
+class QueueModal extends Component {
   state = {
     modal: false,
     name: '',
@@ -87,4 +87,4 @@ class ItemModal extends Component {
 const mapStateToProps = state => ({
   item: state.item
 });
-export default connect(mapStateToProps, { addItem })(ItemModal);
+export default connect(mapStateToProps, { addItem })(QueueModal);

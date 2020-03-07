@@ -1,13 +1,13 @@
 import React, { Component } from 'react';
 import AppNavbar from './components/AppNavbar';
-import ShoppingList from './components/ShoppingList';
+import BookQueue from './components/BookQueue';
 import ReviewList from './components/ReviewList';
 import FavoritesList from './components/FavoritesList';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import { Provider } from 'react-redux';
 import store from './store';
-import ItemModal from './components/ItemModal';
+import QueueModal from './components/QueueModal';
 import FavoritesModal from './components/FavoritesModal';
 import ReviewModal from './components/reviewModal';
 import GoalsList from './components/GoalsList';
