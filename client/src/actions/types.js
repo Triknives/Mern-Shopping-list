@@ -21,3 +21,9 @@ export const GET_FINISHEDBOOKS = 'GET_FINISHEDBOOKS';
 export const ADD_FINISHED = 'ADD_FINISHED';
 export const DELETE_FINISHED= 'DELETE_FINISHED';
 export const FINISHED_BOOKS_LOADING = 'FINISHED_BOOKS_LOADING';
+
+// Goal Actions
+export const GET_GOALS = 'GET_GOALS';
+export const ADD_GOAL = 'ADD_GOAL';
+export const DELETE_GOAL = 'DELETE_GOAL';
+export const GOALS_LOADING = 'GOALS_LOADING';

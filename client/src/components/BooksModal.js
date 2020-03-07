@@ -35,8 +35,7 @@ class BooksModal extends Component {
     }
     console.log(this.state.title)
     // Add item via AddItem actions
-    this.props.addBook(newGoal);
-    console.log(newBook)
+    this.props.addGoal(newGoal);
     //Close Modal
     this.toggle();
   }
