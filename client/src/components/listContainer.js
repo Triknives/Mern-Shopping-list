@@ -1,8 +1,8 @@
 import React from 'react';
 import FavoritesList from './FavoritesList';
 import FavoritesModal from './FavoritesModal';
-import BooksRead from './BooksRead';
-import BooksModal from './BooksModal';
+import GoalsList from './GoalsList';
+import GoalsModal from './GoalsModal';
 import ShoppingList from './ShoppingList';
 import ItemModal from './ItemModal';
 
@@ -17,9 +17,9 @@ function ListContainer()  {
 
   return(
     <div style = {listContainerAtt}>
-      
       <FavoritesList/>
       <ShoppingList/>
+      <GoalsList/>
     </div>
   )
 }

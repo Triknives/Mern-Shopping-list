@@ -10,8 +10,8 @@ import store from './store';
 import ItemModal from './components/ItemModal';
 import FavoritesModal from './components/FavoritesModal';
 import ReviewModal from './components/reviewModal';
-import BooksRead from './components/BooksRead';
-import BooksModal from './components/BooksModal';
+import GoalsList from './components/GoalsList';
+import GoalsModal from './components/GoalsModal';
 import ListContainer from './components/listContainer';
 import { Container } from 'reactstrap';
 

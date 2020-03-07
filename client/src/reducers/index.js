@@ -11,5 +11,5 @@ export default combineReducers({
   review: reviewReducer,
   book: bookReducer,
   finishedBook: finishedBookReducer,
-  goals: goalReducer,
+  goal: goalReducer,
 });

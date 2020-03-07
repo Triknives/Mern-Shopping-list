@@ -6,6 +6,7 @@ const items = require('./routes/api/items');
 const reviews = require('./routes/api/reviews');
 const books = require('./routes/api/books');
 const finishedBooks = require('./routes/api/finishedBooks');
+const goals = require('./routes/api/goals');
 
 
 const app = express();
@@ -30,6 +31,7 @@ mongoose
   app.use('/api/reviews', reviews);
   app.use('/api/books', books);
   app.use('/api/finishedBooks', finishedBooks);
+    app.use('/api/goals', goals);
 
   const port = process.envPORT || 5000;
 

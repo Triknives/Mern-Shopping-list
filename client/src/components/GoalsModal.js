@@ -11,9 +11,9 @@ import {
   Input,
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { addBook } from '../actions/bookActions';
+import { addGoal } from '../actions/goalActions';
 
-class BooksModal extends Component {
+class GoalsModal extends Component {
   state = {
     modal: false,
     goal: '',
@@ -24,16 +24,15 @@ class BooksModal extends Component {
     });
   }
   onChange = (e) => {
-    this.setState({[e.target.goal]: e.target.goal})
+    this.setState({[e.target.name]: e.target.value})
     console.log(e.target.value)
   }
   onSubmit = (e) => {
     e.preventDefault();
 
     const newGoal = {
-      goal: this.props.goal,
+      goal: this.state.goal,
     }
-    console.log(this.state.title)
     // Add item via AddItem actions
     this.props.addGoal(newGoal);
     //Close Modal
@@ -76,6 +75,6 @@ class BooksModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  book: state.book
+  goal: state.goal
 });
-export default connect(mapStateToProps, { addBook })(BooksModal);
+export default connect(mapStateToProps, { addGoal })(GoalsModal);

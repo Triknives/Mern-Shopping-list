@@ -1,4 +1,4 @@
-import import { GET_GOALS, ADD_GOAL, DELETE_GOAL, GOALS_LOADING } from '../actions/types';
+import { GET_GOALS, ADD_GOAL, DELETE_GOAL, GOALS_LOADING } from '../actions/types';
 
 const initialState = {
   goals: [],
