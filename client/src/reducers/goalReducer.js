@@ -13,17 +13,17 @@ export default function(state = initialState, action){
       goals: action.payload,
       loading: false
     };
-    case ADD_REVIEW:
+    case ADD_GOAL:
     return{
       ...state,
       goals: [action.payload, ...state.goals]
     };
-    case DELETE_REVIEW:
+    case DELETE_GOAL:
       return {
         ...state,
           goals: state.goals.filter(goal => goal._id !== action.payload)
         };
-    case REVIEWS_LOADING:
+    case GOALS_LOADING:
       return {
         ...state,
         loading: true

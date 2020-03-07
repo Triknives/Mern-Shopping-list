@@ -3,6 +3,7 @@ import itemReducer from './itemReducer';
 import reviewReducer from './reviewReducer';
 import bookReducer from './bookReducer';
 import finishedBookReducer from './finishedBookReducer';
+import goalReducer from './goalReducer';
 
 
 export default combineReducers({
@@ -10,4 +11,5 @@ export default combineReducers({
   review: reviewReducer,
   book: bookReducer,
   finishedBook: finishedBookReducer,
+  goals: goalReducer,
 });
