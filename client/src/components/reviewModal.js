@@ -15,7 +15,8 @@ import { addReview } from '../actions/reviewActions';
 const reviewButton = {
   textAlign:'center',
   width: '100%',
-  float:'left'
+  float:'left',
+  marginTop:'8vh',
 }
 
 class ReviewModal extends Component {
@@ -52,7 +53,6 @@ render(){
       <div style = {reviewButton}>
     <Button
       color="dark"
-      style={{marginBottom: '2rem'}}
       onClick={this.toggle}
       >Add Review</Button>
       </div>

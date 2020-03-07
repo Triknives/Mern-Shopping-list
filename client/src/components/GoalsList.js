@@ -41,9 +41,9 @@ class GoalsList extends Component {
           {goals.map(({_id, goal}) => (
         <ul style = {listBody}>
               <li>
-              <Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
+              <button class="deleteBtn" color="danger" onClick={this.onDeleteClick.bind(this, _id)}>
                   &times;
-                </Button>
+                </button>
               {goal}
               </li>
           </ul>

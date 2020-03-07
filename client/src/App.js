@@ -24,8 +24,8 @@ class App extends Component {
         <Container>
           <AppNavbar/>
           <ListContainer/>
-          <ReviewList/>
           <ReviewModal/>
+          <ReviewList/>
           </Container>
           </div>
       </Provider>

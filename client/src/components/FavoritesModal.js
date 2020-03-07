@@ -48,7 +48,7 @@ class FavoritesModal extends Component {
       <Button
         color="dark"
         onClick={this.toggle}
-      >Add Favorite</Button>
+      >Add Book</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
@@ -72,7 +72,7 @@ class FavoritesModal extends Component {
                   onChange={this.onChange}
                 />
                 <Button color="dark" block>
-                Add Item
+                Add Book
               </Button>
             </FormGroup>
           </Form>

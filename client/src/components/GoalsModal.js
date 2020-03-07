@@ -46,7 +46,7 @@ class GoalsModal extends Component {
       <Button
         color="dark"
         onClick={this.toggle}
-      >Add Book</Button>
+      >Add Goal</Button>
       <Modal
         isOpen={this.state.modal}
         toggle={this.toggle}
@@ -59,6 +59,7 @@ class GoalsModal extends Component {
                 <Input
                   type="text"
                   name="goal"
+                    color="dark"
                   placeholder="Who Wrote it!"
                   onChange={this.onChange}
                 />

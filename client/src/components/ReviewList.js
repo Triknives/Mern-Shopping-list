@@ -3,11 +3,11 @@ import {   Card, CardImg, CardText, CardBody, CardLink,
   CardTitle, CardSubtitle , Button, Container} from 'reactstrap';
 import { CSSTransition, TransitionGroup } from 'react-transition-group';
 import { connect } from 'react-redux';
+import ReviewModal from './reviewModal';
 import { getReviews, deleteReview } from '../actions/reviewActions';
 import PropTypes from 'prop-types';
 
 const reviewStyling = {
-  marginTop: '6vh',
   display:'inline_block',
   justifyContent:'center',
   width: '100%'
@@ -20,13 +20,8 @@ const reviewBodyStyling = {
 }
 const textStyling = {
   marginLeft: '-20px',
-  marginTop:'-25px',
   color: 'white',
   fontWeight: '600',
-}
-const listBody = {
-
-
 }
 
 const reviewText = {

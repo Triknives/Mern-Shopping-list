@@ -41,9 +41,9 @@ class FavoritesList extends Component {
             {finishedBooks.map(({_id, name, author}) => (
             <ul style = {listBody}>
                 <li>
-                <Button Button color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
+                <button Button color= "danger" class= "deleteBtn" onClick={this.onDeleteClick.bind(this, _id)}>
                     &times;
-                  </Button>
+                  </button>
                 {name} {author}
                 </li>
             </ul>
