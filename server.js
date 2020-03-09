@@ -7,21 +7,25 @@ const reviews = require('./routes/api/reviews');
 const books = require('./routes/api/books');
 const finishedBooks = require('./routes/api/finishedBooks');
 const goals = require('./routes/api/goals');
-
+const config = require('config');
 
 const app = express();
 
 //Bodyparser Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 //DB Config
-const db = require('./config/keys').mongoURI;
+const db = config.get('mongoURI');
 
 //Connect to Mongo
 mongoose
-  .connect(db, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(db, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true })
+
   .then(() => console.log('MongoDb Connected...'))
   .catch(err => console.log(err));
   { useUnifiedTopology: true }
@@ -31,7 +35,8 @@ mongoose
   app.use('/api/reviews', reviews);
   app.use('/api/books', books);
   app.use('/api/finishedBooks', finishedBooks);
-    app.use('/api/goals', goals);
+  app.use('/api/goals', goals);
+  app.use ('/api/users', require('./routes/api/users'));
 
   const port = process.envPORT || 5000;
 
