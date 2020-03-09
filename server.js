@@ -37,6 +37,7 @@ mongoose
   app.use('/api/finishedBooks', finishedBooks);
   app.use('/api/goals', goals);
   app.use ('/api/users', require('./routes/api/users'));
+  app.use ('/api/auth', require('./routes/api/auth'));
 
   const port = process.envPORT || 5000;
 
