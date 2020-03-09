@@ -13,6 +13,7 @@ _An Application to help avid readers or those looking for a way to increase the 
 * _Have Node.js installed_
 * _Acquire Repo from Git or sign up via deployed Heroku (link to be provided)._
 * _Once Repo is cloned - Do Npm install / then CD into Client and npm install again (script for one time install coming)_
+* _Server registered and account registered to Atlas MongoDb or a server of your own to route to / proxy._
 
 ## Known Bugs
 
