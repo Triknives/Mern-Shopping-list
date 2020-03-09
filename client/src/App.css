@@ -5,6 +5,10 @@ body {
   background-size: cover;
 }
 
+.remove-btn {
+  width: 12%;
+  margin: 0 auto;
+}
 
 #nav {
   opacity: .75;

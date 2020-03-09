@@ -17,6 +17,8 @@ const reviewBodyStyling = {
   padding:'1vh',
   backgroundColor: 'black',
   opacity:'.75',
+  margin: '1vh auto',
+  width: '70%',
 }
 const textStyling = {
   marginLeft: '-20px',
@@ -60,6 +62,7 @@ class ReviewList extends Component {
             size="sm"
             onClick={this.onDeleteClick.bind(this, _id)}
           >
+          Remove
           </Button>
         </Card>
       ))}

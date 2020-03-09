@@ -14,9 +14,10 @@ import { addReview } from '../actions/reviewActions';
 
 const reviewButton = {
   textAlign:'center',
-  width: '100%',
+  width: '99%',
   float:'left',
-  marginTop:'8vh',
+  marginTop:'6vh',
+  margin: '1vh',
 }
 
 class ReviewModal extends Component {
