@@ -22,6 +22,8 @@ const reviewButton = {
 class ReviewModal extends Component {
   state = {
     modal: false,
+    title:'',
+    author:'',
     post:''
   }
   toggle = () => {
@@ -31,13 +33,15 @@ class ReviewModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
-    console.log(e.target.name)
-    console.log(e.target.value)
+    this.setState({[e.target.author]: e.target.value});
+    this.setState({[e.target.title]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();
 
     const newReview = {
+      title: this.state.title,
+      author: this.state.author,
       post: this.state.post
     }
     // add review via addReview from Actions
@@ -64,6 +68,20 @@ render(){
         <ModalBody>
           <Form onSubmit={this.onSubmit}>
             <FormGroup>
+            <Label for="review">Book Title</Label>
+              <Input
+                type="text"
+                name="title"
+                placeholder="Add New Title"
+                onChange={this.onChange}
+              />
+              <Label for="review">Author</Label>
+                <Input
+                  type="text"
+                  name="author"
+                  placeholder="Add New Author"
+                  onChange={this.onChange}
+                />
               <Label for="review">Review</Label>
                 <Input
                   type="textarea"

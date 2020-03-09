@@ -43,11 +43,11 @@ class ReviewList extends Component {
     return(
 
       <div style = {reviewStyling}>
-      {reviews.map(({_id, post}) => (
+      {reviews.map(({_id, title, author, post}) => (
         <Card style = {reviewBodyStyling}>
           <div style = {reviewText}>
-            <h5>Card title</h5>
-            <h6>Card subtitle</h6>
+            <h5>{title}</h5>
+            <h6>{author}</h6>
           </div>
             <CardBody>
               <div style ={textStyling}>

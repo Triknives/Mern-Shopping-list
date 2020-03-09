@@ -19,6 +19,8 @@ router.get('/',(req, res ) => {
 router.post('/', (req, res) => {
   console.log(req.body)
   const newReview = new Review({
+    title: req.body.title,
+    author: req.body.author,
     post: req.body.post
   });
   newReview.save().then(review => res.json(review))

@@ -3,6 +3,14 @@ const Schema = mongoose.Schema;
 
 // Create Schema
 const ReviewSchema = new Schema ({
+  title: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
   post: {
     type: String,
     required: true
