@@ -25,6 +25,11 @@ const listHeader = {
 }
 
 class BookQueue extends Component {
+  static propTypes = {
+    getItems: PropTypes.func.isRequired,
+    item: PropTypes.object.isRequired,
+    isAthenticated: PropTypes.bool,
+  }
   componentDidMount(){
     this.props.getItems();
   }
@@ -35,15 +40,19 @@ class BookQueue extends Component {
     const { items } = this.props.item;
 
     return(
-
       <div style = {tGroup}>
           <h5 style = {listHeader}>Book Queue</h5>
           {items.map(({_id, name, author}) => (
         <ul style = {listBody}>
               <li>
-              <button class= "deleteBtn" color= "danger" onClick={this.onDeleteClick.bind(this, _id)}>
-                  &times;
-                </button>
+              <button
+              class= "deleteBtn"
+              color= "danger"
+              onClick={this.onDeleteClick.bind(this, _id)}
+              >
+                &times;
+              </button>
+
               {name} {author}
               </li>
           </ul>
@@ -53,13 +62,10 @@ class BookQueue extends Component {
     );
   }
 }
-BookQueue.propTypes = {
-  getItems: PropTypes.func.isRequired,
-  item: PropTypes.object.isRequired
-}
 
 const mapStateToProps = (state) => ({
-  item: state.item
+  item: state.item,
+  isAuthenticated: state.auth.isAthenticated,
 });
 
 export default connect(mapStateToProps, { getItems, deleteItem })(BookQueue);

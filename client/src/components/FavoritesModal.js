@@ -26,7 +26,6 @@ class FavoritesModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
-    this.setState({[e.target.author]: e.target.value});
   }
   onSubmit = (e) => {
     e.preventDefault();

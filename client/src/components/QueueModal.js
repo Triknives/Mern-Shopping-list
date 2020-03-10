@@ -12,6 +12,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { addItem } from '../actions/queueActions';
+import PropTypes from 'prop-types';
 
 class QueueModal extends Component {
   state = {
@@ -26,8 +27,6 @@ class QueueModal extends Component {
   }
   onChange = (e) => {
     this.setState({[e.target.name]: e.target.value});
-    this.setState({[e.target.author]: e.target.value});
-    console.log(e.target.title)
   }
   onSubmit = (e) => {
     e.preventDefault();
@@ -85,6 +84,7 @@ class QueueModal extends Component {
 }
 
 const mapStateToProps = state => ({
-  item: state.item
+  item: state.item,
+  isAthenticated: state.auth.isAthenticated
 });
 export default connect(mapStateToProps, { addItem })(QueueModal);
