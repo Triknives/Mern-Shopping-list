@@ -14,7 +14,7 @@ import GoalsList from './components/GoalsList';
 import GoalsModal from './components/GoalsModal';
 import ListContainer from './components/listContainer';
 import { Container } from 'reactstrap';
-import {loadUser} from './actions/authActions.js'
+import { loadUser } from './actions/authActions.js';
 
 
 class App extends Component {

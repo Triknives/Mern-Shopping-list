@@ -5,7 +5,7 @@ import bookReducer from './bookReducer';
 import finishedBookReducer from './finishedBookReducer';
 import goalReducer from './goalReducer';
 import errorReducer from './errorReducer';
-import authReducer from './errorReducer';
+import authReducer from './authReducer';
 
 
 export default combineReducers({
