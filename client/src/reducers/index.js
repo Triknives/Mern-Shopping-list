@@ -4,6 +4,8 @@ import reviewReducer from './reviewReducer';
 import bookReducer from './bookReducer';
 import finishedBookReducer from './finishedBookReducer';
 import goalReducer from './goalReducer';
+import errorReducer from './errorReducer';
+import authReducer from './errorReducer';
 
 
 export default combineReducers({
@@ -12,4 +14,6 @@ export default combineReducers({
   book: bookReducer,
   finishedBook: finishedBookReducer,
   goal: goalReducer,
+  error: errorReducer,
+  auth: authReducer,
 });
