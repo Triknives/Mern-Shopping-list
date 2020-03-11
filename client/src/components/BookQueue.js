@@ -52,8 +52,7 @@ class BookQueue extends Component {
               >
                 &times;
               </button>
-
-              {name} {author}
+              {name} | {author}
               </li>
           </ul>
           ))}

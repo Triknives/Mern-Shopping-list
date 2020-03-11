@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const auth = require('../../middleware/auth');
 
 //Review model
 const Review = require('../../models/Review');
@@ -16,7 +17,7 @@ router.get('/',(req, res ) => {
 // @route   POST api/Reviews
 // @desc    Create A Review
 // @access  Public
-router.post('/', (req, res) => {
+router.post('/', auth, (req, res) => {
   console.log(req.body)
   const newReview = new Review({
     title: req.body.title,
@@ -31,7 +32,7 @@ router.post('/', (req, res) => {
 // @route   Delete api/reviews/:id
 // @desc    Delete A Review
 // @access  Public
-router.delete('/:id', (req, res) => {
+router.delete('/:id', auth, (req, res) => {
     Review.findById(req.params.id)
       .then(review => review.remove().then(() => res.json({success: true})))
       .catch(err => res.status(404).json({success: false}));

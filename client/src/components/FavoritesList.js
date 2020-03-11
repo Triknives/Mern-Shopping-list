@@ -44,7 +44,7 @@ class FavoritesList extends Component {
                 <button Button color= "danger" class= "deleteBtn" onClick={this.onDeleteClick.bind(this, _id)}>
                     &times;
                   </button>
-                {name} {author}
+              {name} | {author}
                 </li>
             </ul>
             ))}

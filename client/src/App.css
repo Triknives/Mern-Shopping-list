@@ -3,12 +3,9 @@ body {
   /* background-color: #5c8cb4; */
   background-image: url('https://img.wallpapersafari.com/desktop/1920/1080/85/43/sV9YnT.jpg');
   background-size: cover;
+  height:100vh;
 }
 
-.remove-btn {
-  width: 12%;
-  margin: 0 auto;
-}
 
 #nav {
   opacity: .75;
@@ -23,6 +20,12 @@ body {
   margin: 1.25vh;
   margin-left:-2vw;
 
+}
+
+.remove-btn {
+  width: 8vw;
+  min-width: 8vw;
+  margin: 0 auto;
 }
 
 .wantButton {

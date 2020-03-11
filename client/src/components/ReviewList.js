@@ -57,8 +57,9 @@ class ReviewList extends Component {
               </div>
           </CardBody>
           <Button
+            block
             className="remove-btn"
-            color="danger"
+            color="dark"
             size="sm"
             onClick={this.onDeleteClick.bind(this, _id)}
           >
