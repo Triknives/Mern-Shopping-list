@@ -40,8 +40,13 @@ mongoose
   app.use ('/api/users', require('./routes/api/users'));
   app.use ('/api/auth', require('./routes/api/auth'));
 
+  app.get('/', function(req, res){
+     res.redirect('/todo');
+  });
+
+
   // Serve static asses if in production
-  if(process.env.node_env === 'production') {
+  if(process.env.NODE_ENV === 'production') {
     // Set static folder
     app.use(express.static('client/build'));
 
