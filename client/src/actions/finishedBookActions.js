@@ -1,5 +1,8 @@
 import axios from 'axios';
 import { GET_FINISHEDBOOKS, ADD_FINISHED, DELETE_FINISHED, FINISHED_BOOKS_LOADING } from './types';
+import { tokenConfig } from './authActions';
+import { returnErrors} from './errorActions';
+
 
 export const getFinishedBooks = () => dispatch =>  {
   dispatch(setFinishedLoading());
@@ -11,17 +14,16 @@ export const getFinishedBooks = () => dispatch =>  {
     })
   )
 };
-export const addFinishedBook = (finishedBook) => dispatch => {
-  axios.post('/api/finishedBooks', finishedBook ).then(res =>
+export const addFinishedBook = (finishedBook) => (dispatch, getState) => {
+  axios.post('/api/finishedBooks', finishedBook,tokenConfig(getState) ).then(res =>
     dispatch({
       type: ADD_FINISHED,
       payload: res.data
-    })
-  )
+    }))
 };
 
-export const deleteFinishedBook = (id) => dispatch => {
-axios.delete(`/api/finishedBooks/${id}`).then(res =>
+export const deleteFinishedBook = (id) => (dispatch, getState) => {
+axios.delete(`/api/finishedBooks/${id}`, tokenConfig(getState)).then(res =>
   dispatch({
     type: DELETE_FINISHED,
     payload: id,

@@ -1,6 +1,5 @@
 import axios from 'axios';
 import { GET_REVIEWS, ADD_REVIEW, DELETE_REVIEW, REVIEWS_LOADING } from './types';
-
 import { tokenConfig } from './authActions';
 import { returnErrors} from './errorActions';
 
@@ -15,7 +14,7 @@ export const getReviews = () => dispatch => {
   };
 
 export const addReview = (review) => (dispatch, getState) => {
-  axios.post('/api/reviews', review, tokenConfig(getState) ).then(res =>
+  axios.post('/api/reviews', review, tokenConfig(getState)).then(res =>
     dispatch({
       type: ADD_REVIEW,
       payload: res.data
