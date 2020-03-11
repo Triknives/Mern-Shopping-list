@@ -18,7 +18,7 @@ router.get('/',(req, res ) => {
 // @route   POST api/BooksRead
 // @desc    Create A Completed Book
 // @access  Public
-router.post('/', auth, (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body)
   const newBook = new Book({
     title: req.body.title,
@@ -32,7 +32,7 @@ router.post('/', auth, (req, res) => {
 // @route   Delete api/completedBooks/:id
 // @desc    Delete A Completed Book
 // @access  Public
-router.delete('/:id', auth, (req, res) => {
+router.delete('/:id', (req, res) => {
     Book.findById(req.params.id)
       .then(book => book.remove().then(() => res.json({success: true})))
       .catch(err => res.status(404).json({success: false}));

@@ -16,7 +16,7 @@ router.get('/', (req, res) => {
 // @route   POST api/Items
 // @desc    Create An Item
 // @access  Public
-router.post('/', auth, (req, res) => {
+router.post('/', (req, res) => {
   console.log(req.body)
   const newFinishedBook = new FinishedBook({
     name: req.body.name,
@@ -29,7 +29,7 @@ router.post('/', auth, (req, res) => {
 // @route   Delete api/items/:id
 // @desc    Delete A Item
 // @access  Public
-router.delete('/:id',auth, (req, res) => {
+router.delete('/:id', (req, res) => {
     FinishedBook.findById(req.params.id)
       .then(finishedBook => finishedBook.remove().then(() => res.json({success: true})))
       .catch(err => res.status(404).json({success: false}));
