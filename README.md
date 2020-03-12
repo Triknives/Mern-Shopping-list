@@ -42,7 +42,7 @@ _This application utilizes the "MERN" stack. Allowing the application to store p
 * _MongoDb_
 * _Atlas Mongo Server Hosting_
 
-## Page Wifeframe
+## Page Wireframe
 _Designs from the wireframe are a work in progress and will continue to be developed and implemented into the site._
 ![UserPage](https://user-images.githubusercontent.com/50305423/75633743-81548280-5bbc-11ea-87a2-745783d81002.png)
 
