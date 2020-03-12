@@ -38,9 +38,10 @@ _This application utilizes the "MERN" stack. Allowing the application to store p
 * _React_
 * _BcryptJS_
 * _Node.js_
-* _Express_
+* _ExpressJS_
 * _MongoDb_
 * _Atlas Mongo Server Hosting_
+* _JSON Web Token_
 
 ## Page Wireframe
 _Designs from the wireframe are a work in progress and will continue to be developed and implemented into the site._
