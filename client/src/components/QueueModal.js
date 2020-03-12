@@ -64,7 +64,7 @@ class QueueModal extends Component {
                   placeholder="Who Wrote it!"
                   onChange={this.onChange}
                 />
-                <Label for="item">Item</Label>
+                <Label for="item">Add Next Book</Label>
                   <Input
                     type="text"
                     name="name"
