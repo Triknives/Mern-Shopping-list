@@ -25,6 +25,7 @@ const listHeader = {
 }
 
 class BookQueue extends Component {
+
   static propTypes = {
     getItems: PropTypes.func.isRequired,
     item: PropTypes.object.isRequired,
