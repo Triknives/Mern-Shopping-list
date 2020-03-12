@@ -63,7 +63,7 @@ class FavoritesModal extends Component {
                   placeholder="Add a favorite of yours!"
                   onChange={this.onChange}
                 />
-                <Label for="item">Item</Label>
+                <Label for="item">Book</Label>
                 <Input
                   type="text"
                   name="name"
