@@ -8,7 +8,7 @@
 
 _An Application to explore the MERN stack. This is my first attempt using the stack, and will be a bit bumpy! The intent of the application once it is completed is to help avid readers or those looking for a way to increase the amount of time they do per week or day. The application is designed to help readers track the books completed, the next book they'd like to read, and their favorite. Users will also be able to leave reviews of the books they read to help other readers find their next book to read. Users will also be able to add reading goals, or notes on their page. In short, its an online book club!_
 
-##Stretch Goals:
+## Stretch Goals:
 _At this time, authorization is being configured to better work with Heroku, as it is struggling to track the JWT exchange and values as described in "known bugs."_
 
 _Further updates will bring private routing to the application. Allowing each user to maintain their own lists, as for now it is a message board allowing others to leave reviews and edit a "main list." It is effectively an app for an individual at this time._
@@ -42,7 +42,7 @@ _This application utilizes the "MERN" stack. Allowing the application to store p
 * _MongoDb_
 * _Atlas Mongo Server Hosting_
 
-##Page Wifeframe
+## Page Wifeframe
 _Designs from the wireframe are a work in progress and will continue to be developed and implemented into the site._
 ![UserPage](https://user-images.githubusercontent.com/50305423/75633743-81548280-5bbc-11ea-87a2-745783d81002.png)
 
