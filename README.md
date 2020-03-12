@@ -25,16 +25,19 @@ _Please send and e-mail to Cordell.desu@gmail.com if you have any specific bugs 
 
 ## Technologies Used
 
-_This application utilizes the "MERN" stack. Allowing the application to store persistent data and changes as created by the user. Authenitcation has further been added through BcryptJS a variant of the ruby gem._ 
+_This application utilizes the "MERN" stack. Allowing the application to store persistent data and changes as created by the user. Authenitcation has further been added through BcryptJS a variant of the ruby gem._
 
 * _This application is built utilizing the MERN stack_
 * _Axios_
 * _React_
+* _BcryptJS_
 * _Node.js_
 * _Express_
 * _MongoDb_
 * _Atlas Mongo Server Hosting_
 
+##Page Wifeframe
+_Designs from the wireframe are a work in progress and will continue to be developed and implemented into the site._
 ![UserPage](https://user-images.githubusercontent.com/50305423/75633743-81548280-5bbc-11ea-87a2-745783d81002.png)
 
 ### License
