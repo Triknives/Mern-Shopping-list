@@ -25,6 +25,8 @@ _Please send and e-mail to Cordell.desu@gmail.com if you have any specific bugs 
 
 ## Technologies Used
 
+_This application utilizes the "MERN" stack. Allowing the application to store persistent data and changes as created by the user. Authenitcation has further been added through BcryptJS a variant of the ruby gem._ 
+
 * _This application is built utilizing the MERN stack_
 * _Axios_
 * _React_
