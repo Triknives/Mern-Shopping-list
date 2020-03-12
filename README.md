@@ -6,7 +6,7 @@
 
 ## Description
 
-_An Application to help avid readers or those looking for a way to increase the amount of time they do per week or day. The application is designed to help readers track the books completed, the next book they'd like to read, and their favorite. Users will also be able to leave reviews of the books they read to help other readers find their next book to read. In short, its an online book club!_
+_An Application to help avid readers or those looking for a way to increase the amount of time they do per week or day. The application is designed to help readers track the books completed, the next book they'd like to read, and their favorite. Users will also be able to leave reviews of the books they read to help other readers find their next book to read. Users will also be able to add reading goals, or notes on their page. In short, its an online book club!_
 
 ## Setup/Installation Requirements
 
